@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #000000, #1a1a1a);
+  background-size: 200% 200%;
+  animation: fundo 10s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  color: #fff;
+}
+
+@keyframes fundo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.btn-musica {
+  background: #ff6699;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.btn-musica:hover {
+  transform: scale(1.1);
+}
+
+.carrossel {
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.6);
+  border-radius: 10px;
+}
+
+.legenda {
+  text-align: center;
+  color: #ffccdd;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: #ffccdd;
+  text-align: center;
+}
+
+p {
+  max-width: 500px;
+  text-align: center;
+  color: #f2f2f2;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+hr {
+  width: 80%;
+  margin: 30px auto;
+  border: none;
+  border-top: 2px solid #ffb6c1; /* cor suave, você pode trocar */
+}
+
+footer {
+  text-align: center;
+  color: #ccc;
+  margin-top: 20px;
+  padding: 20px;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.hearts::before, .hearts::after {
+  content: "❤️";
+  position: fixed;
+  font-size: 24px;
+  opacity: 0.5;
+  animation: subir 10s linear infinite;
+}
+
+.hearts::after {
+  left: 80%;
+  animation-delay: 3s;
+}
+
+@keyframes subir {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}

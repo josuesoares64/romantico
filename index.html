@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Te amo princesa ❤️</title>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button onclick="tocarMusica()" class="btn-musica">🎵 Tocar música</button>
+    <audio id="musica" loop>
+      <source src="videoplayback.weba" type="audio/webm">
+      Seu navegador não suporta áudio.
+    </audio>
+  </header>
+
+  <main>
+    <div class="carrossel">
+      <div class="slides" id="slides">
+        <div class="slide">
+          <img src="img/IMG-20240615-WA0057.jpg" alt="Imagem 1">
+        </div>
+        <div class="slide">
+          <img src="img/IMG-20240617-WA0070.jpg" alt="Imagem 2">
+        </div>
+        <div class="slide">
+          <img src="img/IMG-20240818-WA0019.jpg" alt="Imagem 3">
+        </div>
+        <div class="slide">
+          <img src="img/IMG_20241231_214307.jpg" alt="Imagem 4">
+        </div>
+        <div class="slide">
+          <img src="img/IMG-20250214-WA0094.jpg" alt="Imagem 5">
+        </div>
+        <div class="slide">
+          <img src="img/IMG_20240722_151245.jpg" alt="Imagem 6">
+        </div>
+        <div class="slide">
+          <img src="img/IMG_20250309_183419.jpg" alt="Imagem 7">
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h1>Te amo princesa ❤️</h1>
+    <p>
+      Amor,<br><br>
+      Às vezes me pego lembrando de tudo o que já vivemos... de como, mesmo sendo nosso primeiro amor, parece que a gente se conhece há uma vida inteira.  
+      Entre mensagens, fotos e saudades, você tem sido meu refúgio em dias difíceis e minha força nos dias em que eu quase desisti.<br><br>
+      Mesmo distante, você nunca saiu de perto do meu coração. E é por isso que cada esforço que faço, cada linha de código que escrevo, cada escolha que tomo... tem você por trás.
+      Eu sonho com o dia em que não vai mais precisar de despedida, onde a distância vira só memória. Quando eu finalmente puder voltar pro interior, ficar do seu lado, te abraçar sem contar as horas.<br><br>
+      Você é mais do que amor — é meu motivo, minha calma, minha certeza de que tudo vai valer a pena.<br>
+      Obrigado por acreditar em mim, por entender minhas lutas, por me esperar mesmo quando a vida parece demorar demais.<br><br>
+      Eu te amo.<br>
+      E te prometo: a gente ainda vai construir tudo o que sonhamos, juntos.
+    </p>
+  </main>
+
+  <footer>
+    “Com você, cada linha da minha vida faz sentido.” — Josué 💕
+  </footer>
+
+  <div class="hearts"></div>
+
+  <script>
+    function tocarMusica() {
+      const audio = document.getElementById('musica');
+      audio.play();
+    }
+
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }, 3000);
+  </script>
+</body>
+</html>

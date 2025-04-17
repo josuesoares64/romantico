@@ -8,40 +8,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(120deg, #000000, #1a1a1a);
-  background-size: 200% 200%;
-  animation: fundo 10s ease infinite;
   font-family: 'Segoe UI', sans-serif;
   padding: 20px;
-  color: #fff;
-}
-
-@keyframes fundo {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-body {
   background: linear-gradient(135deg, #1a000a, #3c001c, #5b001f);
   background-size: 300% 300%;
   animation: movimento 12s ease-in-out infinite;
   color: white;
+  text-align: center;
 }
 
 @keyframes movimento {
-  0% { background-position: 0% 50%; }
+  0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.assinatura {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.8rem;
-  color: #d6336c;
-  text-align: right;
-  margin-top: 30px;
 }
 
 header {
@@ -65,15 +45,13 @@ header {
 }
 
 .carrossel {
-  width: 300px;
+  width: 90%;
+  max-width: 320px;
   height: 450px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
-  position: relative;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 20px;
 }
 
 .slides {
@@ -95,51 +73,79 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.6);
   border-radius: 10px;
 }
 
 .legenda {
-  text-align: center;
-  color: #ffccdd;
   font-size: 0.9rem;
   margin-top: 5px;
+  color: #ffccdd;
 }
 
 h1 {
-  margin-top: 60px;
-  margin-bottom: 10px;
+  margin-top: 40px;
   font-size: 1.8rem;
   color: #ffccdd;
-  text-align: center;
 }
-
 
 p {
   font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  max-width: 500px;
-  text-align: center;
-  color: #f2f2f2;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
   line-height: 1.6;
+  max-width: 600px;
+  color: #f2f2f2;
+  margin: 20px auto;
+}
+
+.assinatura {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  color: #d6336c;
+  margin-top: 20px;
 }
 
 hr {
   width: 80%;
   margin: 30px auto;
   border: none;
-  border-top: 2px solid #ffb6c1; /* cor suave, você pode trocar */
+  border-top: 2px solid #ffb6c1;
 }
 
 footer {
-  text-align: center;
+  font-size: 0.9rem;
   color: #ccc;
-  margin-top: 20px;
   padding: 20px;
+  margin-top: 20px;
   font-style: italic;
-  font-size: 0.95rem;
+}
+
+.contador-romantico {
+  font-size: 18px;
+  font-weight: 600;
+  color: #d63384;
+  background-color: #fff0f6;
+  padding: 12px 20px;
+  border-radius: 20px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.cora {
+  animation: bater 1.5s infinite ease-in-out;
+  display: inline-block;
+  transform-origin: center;
+}
+
+@keyframes bater {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 
 .hearts::before, .hearts::after {
@@ -172,34 +178,24 @@ footer {
   }
 }
 
-.contador-romantico {
-  font-size: 20px;
-  font-weight: 600;
-  color: #d63384; /* rosa romântico */
-  background-color: #fff0f6;
-  padding: 12px 20px;
-  border-radius: 20px;
-  text-align: center;
-  width: fit-content;
-  margin: 20px auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  animation: pulse 2s infinite;
-}
+/* Responsivo */
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
-}
+  p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
 
-.cora {
-  animation: bater 1.5s infinite ease-in-out;
-  display: inline-block;
-  transform-origin: center;
-}
+  .contador-romantico {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
 
-@keyframes bater {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+  .btn-musica {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
 }

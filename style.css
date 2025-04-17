@@ -23,6 +23,27 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+body {
+  background: linear-gradient(135deg, #1a000a, #3c001c, #5b001f);
+  background-size: 300% 300%;
+  animation: movimento 12s ease-in-out infinite;
+  color: white;
+}
+
+@keyframes movimento {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.assinatura {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: #d6336c;
+  text-align: right;
+  margin-top: 30px;
+}
+
 header {
   margin-bottom: 20px;
 }
@@ -86,13 +107,18 @@ header {
 }
 
 h1 {
+  margin-top: 60px;
   margin-bottom: 10px;
   font-size: 1.8rem;
   color: #ffccdd;
   text-align: center;
 }
 
+
 p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
   max-width: 500px;
   text-align: center;
   color: #f2f2f2;
@@ -144,4 +170,36 @@ footer {
     opacity: 0;
     transform: translateX(20px);
   }
+}
+
+.contador-romantico {
+  font-size: 20px;
+  font-weight: 600;
+  color: #d63384; /* rosa romântico */
+  background-color: #fff0f6;
+  padding: 12px 20px;
+  border-radius: 20px;
+  text-align: center;
+  width: fit-content;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.cora {
+  animation: bater 1.5s infinite ease-in-out;
+  display: inline-block;
+  transform-origin: center;
+}
+
+@keyframes bater {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }

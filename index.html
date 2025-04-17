@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <title>Te amo princesa ❤️</title>
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <button onclick="tocarMusica()" class="btn-musica">🎵 Tocar música</button>
+    <button onclick="tocarMusica()" class="btn-musica">Toca aqui princesa🎵</button>
     <audio id="musica" loop>
       <source src="videoplayback.weba" type="audio/webm">
       Seu navegador não suporta áudio.
@@ -22,7 +23,7 @@
           <img src="img/IMG-20240615-WA0057.jpg" alt="Imagem 1">
         </div>
         <div class="slide">
-          <img src="img/IMG-20240617-WA0070.jpg" alt="Imagem 2">
+          <img src="img/Minha imagem do ChatGPT.png" alt="Imagem 2">
         </div>
         <div class="slide">
           <img src="img/IMG-20240818-WA0019.jpg" alt="Imagem 3">
@@ -37,12 +38,17 @@
           <img src="img/IMG_20240722_151245.jpg" alt="Imagem 6">
         </div>
         <div class="slide">
-          <img src="img/IMG_20250309_183419.jpg" alt="Imagem 7">
+          <img src="img/IMG-20241111-WA0168.jpg" alt="Imagem 7">
         </div>
       </div>
     </div>
 
     <hr>
+
+    <div class="contador-romantico">
+      <span class="cora">❤️</span> Estamos juntos há: <span id="contador"></span>
+    </div>
+        
 
     <h1>Te amo princesa ❤️</h1>
     <p>
@@ -56,7 +62,10 @@
       Eu te amo.<br>
       E te prometo: a gente ainda vai construir tudo o que sonhamos, juntos.
     </p>
+    <p class="assinatura">Com amor, Josué 💌</p>
+
   </main>
+
 
   <footer>
     “Com você, cada linha da minha vida faz sentido.” — Josué 💕
@@ -78,6 +87,44 @@
       index = (index + 1) % totalSlides;
       slides.style.transform = `translateX(-${index * 100}%)`;
     }, 3000);
+
+  const dataNamoro = new Date(2021, 6, 22); // 22 de julho de 2021
+  const contadorEl = document.getElementById("contador");
+
+  function calcularTempoReal(dataInicial, dataFinal) {
+    let anos = dataFinal.getFullYear() - dataInicial.getFullYear();
+    let meses = dataFinal.getMonth() - dataInicial.getMonth();
+    let dias = dataFinal.getDate() - dataInicial.getDate();
+
+    if (dias < 0) {
+      meses--;
+      const ultimoDiaMesAnterior = new Date(dataFinal.getFullYear(), dataFinal.getMonth(), 0).getDate();
+      dias += ultimoDiaMesAnterior;
+    }
+
+    if (meses < 0) {
+      anos--;
+      meses += 12;
+    }
+
+    return { anos, meses, dias };
+  }
+
+  function atualizarTempoDeNamoro() {
+    const agora = new Date();
+    const tempo = calcularTempoReal(dataNamoro, agora);
+
+    const horas = agora.getHours();
+    const minutos = agora.getMinutes();
+    const segundos = agora.getSeconds();
+
+    contadorEl.textContent =
+      `${tempo.anos} ano(s), ${tempo.meses} mês(es), ${tempo.dias} dia(s), ` +
+      `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
+  }
+
+  setInterval(atualizarTempoDeNamoro, 1000);
+  atualizarTempoDeNamoro();
   </script>
 </body>
 </html>
